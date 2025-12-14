@@ -1,0 +1,34 @@
+
+/* SMOOTH SCROLL + LOADING OPTIMIZATION */
+
+/* Native smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* GPU scroll performance */
+body {
+  overscroll-behavior: none;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Section reveal */
+.section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.section.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Initial loading fade */
+body.loading {
+  opacity: 0;
+}
+body.loaded {
+  opacity: 1;
+  transition: opacity .5s ease;
+}

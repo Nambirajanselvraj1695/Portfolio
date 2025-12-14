@@ -1,0 +1,52 @@
+
+/* FINAL MOBILE POLISH + PERFORMANCE */
+
+/* Reduce paint cost */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Improve scrolling */
+body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Mobile spacing refinement */
+@media (max-width: 768px) {
+  section {
+    padding-block: 56px;
+  }
+
+  .hero-wrapper {
+    gap: 20px;
+  }
+
+  h1 {
+    line-height: 1.15;
+  }
+}
+
+/* Defer heavy visuals on mobile */
+@media (max-width: 768px) {
+  .glow, .blur-bg, .neon, .shadow-heavy {
+    filter: none !important;
+    box-shadow: none !important;
+  }
+}
+
+/* Animation entry polish */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.active {
+  opacity: 1;
+  transform: none;
+}
+
+/* Prevent layout shifts */
+img {
+  aspect-ratio: attr(width) / attr(height);
+}
